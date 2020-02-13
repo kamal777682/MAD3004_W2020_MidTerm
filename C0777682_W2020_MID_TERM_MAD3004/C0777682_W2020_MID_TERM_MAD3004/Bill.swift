@@ -7,17 +7,28 @@
 //
 
 import Foundation
+
 enum BillType {
     case Mobile,InTernet,Hydro
 }
 
-class Bill
+class Bill : IDisplay
 {
     var billId : Int
     var billDate : Date?
     var billType : BillType
     var totalBill :  Double
     
-    init(billId : Int)
+    init(billId : Int,billDate : Date,billType : BillType , totalBill : Double )
+    {
+        self.billId = billId
+        self.billDate = billDate
+        self.billType = billType
+        self.totalBill = totalBill
+    }
+    
+    func display() {
+        <#code#>
+    }
 }
 
