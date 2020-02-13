@@ -14,7 +14,7 @@ class Mobile : IDisplay
     var mobileNumber : String
     var mobilePlan : String
     var internetGBUsed : String
-    var minutetalk : String
+    var minuteTalk : String
     
     init(mobileModelName : String, mobileNumber : String, mobilePlan : String, internetGBUsed : String, minutetalk : String)
     {
@@ -24,7 +24,12 @@ class Mobile : IDisplay
         self.internetGBUsed = internetGBUsed
         self.minutetalk = minutetalk
     }
-    func display() {
-        <#code#>
+    func display()
+    {
+        print("Name of The Mobile Model     : \(mobileModelName)")
+        print("Mobile NUmber                : \(mobileNumber)")
+        print("Mobile Plan                  : \(mobilePlan)")
+        print("Internet Used (GB)           : \(internetGBUsed)")
+        print("Talk Minutes                 : \(minuteTalk)")
     }
 }

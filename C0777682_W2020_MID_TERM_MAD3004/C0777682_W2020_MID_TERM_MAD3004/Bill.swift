@@ -27,8 +27,12 @@ class Bill : IDisplay
         self.totalBill = totalBill
     }
     
-    func display() {
-        <#code#>
+    func display()
+    {
+        print("BIll Id              : \(billId)")
+        print("Bill Due Date        : \(billDate)")
+        print("Bill Type            : \(billType)")
+        print("Total Bill to pay    : \(totalBill)")
     }
 }
 
