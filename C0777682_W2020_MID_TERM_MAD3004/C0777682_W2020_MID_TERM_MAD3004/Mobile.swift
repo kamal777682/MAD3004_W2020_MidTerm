@@ -8,28 +8,29 @@
 
 import Foundation
 
-class Mobile : IDisplay
+class Mobile : Bill
 {
     var mobileModelName : String
     var mobileNumber : String
     var mobilePlan : String
     var internetGBUsed : String
-    var minuteTalk : String
+    var minuteUsed : String
     
-    init(mobileModelName : String, mobileNumber : String, mobilePlan : String, internetGBUsed : String, minutetalk : String)
+    init(billId : Int,billDate : Date,billType : BillType , totalBill : Double,  mobileModelName : String, mobileNumber : String, mobilePlan : String, internetGBUsed : String, minuteUsed: String)
     {
         self.mobileModelName = mobileModelName
         self.mobileNumber = mobileNumber
         self.mobilePlan = mobilePlan
         self.internetGBUsed = internetGBUsed
-        self.minutetalk = minutetalk
+        self.minuteUsed = minuteUsed
+        super.init(billId: billId, billDate: billDate, billType: billType, totalBill: totalBill)
     }
-    func display()
+    override func display()
     {
         print("Name of The Mobile Model     : \(mobileModelName)")
         print("Mobile NUmber                : \(mobileNumber)")
         print("Mobile Plan                  : \(mobilePlan)")
         print("Internet Used (GB)           : \(internetGBUsed)")
-        print("Talk Minutes                 : \(minuteTalk)")
+        print("Talk Minutes                 : \(minuteUsed)")
     }
 }
