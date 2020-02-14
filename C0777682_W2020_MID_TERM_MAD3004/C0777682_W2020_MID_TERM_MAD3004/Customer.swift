@@ -10,7 +10,7 @@ import Foundation
 
 class Customer : IDisplay
 {
-    
+   
     var customerId : Int
     var firstName : String
     var lastName : String
@@ -31,9 +31,7 @@ class Customer : IDisplay
     func display()
     {
         print("Customer Id          : \(customerId)")
-        print("First Name           : \(firstName)")
-        print("Last Nname           : \(lastName)")
-        print("Full Name            : \(firstName)\(lastName)")
+        print("Customer Name            : \(firstName)\(lastName)")
         // full name will be automatic displayed we don't need to initialize it
         
         if isValidEmail() == true
@@ -45,13 +43,15 @@ class Customer : IDisplay
             print("E-Mail Id            : Email Id not valid")
         }
         print("Bills to be Paid ")
+        print("---------------------------------------------")
         for b in self.bills
         {
             print(b.key,":" , b.value)
         }
+        print("---------------------------------------------")
         print("Total bill to pay    : \(totalBillAmount)")
+        print("---------------------------------------------")
     }
-    
     func calculateBill()-> Double
     {
         var bill : Double

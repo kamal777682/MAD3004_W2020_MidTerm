@@ -47,9 +47,6 @@ class Mobile : Bill
     
     
     
-    /* var isValidPhone: Bool {
-         let regularExpressionForPhone = "^\\d{3}-\\d{3}-\\d{4}$"
-         let testPhone = NSPredicate(format:"SELF MATCHES %@", regularExpressionForPhone)
-         return testPhone.evaluate(with: self)*/
+ 
     
 }

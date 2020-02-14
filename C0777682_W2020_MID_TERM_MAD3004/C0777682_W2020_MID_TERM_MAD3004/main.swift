@@ -8,6 +8,7 @@
 
 import Foundation
 
+
 func isValidEmail() -> Bool
 {
     let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
@@ -16,6 +17,12 @@ func isValidEmail() -> Bool
     return emailTest.evaluate(with: "Email is not correct")
 }
 
+func isValidPhone() -> Bool
+{
+      let regularExpressionForPhone = "^\\d{3}-\\d{3}-\\d{4}$"
+      let testPhone = NSPredicate(format:"SELF MATCHES %@", regularExpressionForPhone)
+      return testPhone.evaluate(with: "Number is invalid")
+}
 
 
-var m1 = Mobile(
+var b1 = Bill(billId: M001, billDate: 2, billType: <#T##BillType#>)

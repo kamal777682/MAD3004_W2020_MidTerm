@@ -17,12 +17,15 @@ class Hydro : Bill
     {
         self.agencyName = agencyName
         self.unitConsumed = unitConsumed
-        super.init(billId: billId, billDate: billDate, billType: billType, totalBill: totalBill)
+        super.init(billId: billId, billDate: billDate, billType: billType)
     }
     
     override func display()
     {
-        print("Agency Name : \(agencyName)")
-        print("Unit Consumed : \(unitConsumed)")
+        print("BIll Id              : \(billId)")
+        print("Bill Due Date        : \(billDate)")
+        print("Bill Type            : \(billType)")
+        print("Agency Name          : \(agencyName)")
+        print("Unit Consumed        : \(unitConsumed)")
     }
 }

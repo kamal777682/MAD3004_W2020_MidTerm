@@ -15,17 +15,17 @@ enum BillType {
 class Bill : IDisplay
 {
     var billId : Int
-    var billDate : Date?
+    var billDate : String
     var billType : BillType
     var totalBill :  Double
     
-    init(billId : Int,billDate : Date)
+    init(billId : Int,billDate : String)
     {
         self.billId = billId
         self.billDate = billDate
     }
     
-    init(billId : Int,billDate : Date,billType : BillType )
+    init(billId : Int,billDate : String,billType : BillType )
     {
         self.billId = billId
         self.billDate = billDate
@@ -39,5 +39,22 @@ class Bill : IDisplay
         print("Bill Type            : \(billType)")
         print("Total Bill to pay    : \(totalBill)")
     }
-}
+    func dateFormat()-> Date
+    {
+        let billDate = "20:32 Wed, 30 Oct 2019"
+        let billDateFormatter = DateFormatter()
+        billDateFormatter.dateFormat = "EEE ,MMM d,YYY"
+        guard let date = billDateFormatter.date(from: billDate) else
+        {
+            print("Unknown Date")
+        }
+        return date
+        
+        /* let billDate : String
+        let billDateFormatter = DateFormatter()
+        billDateFormatter.dateFormat = "EEE ,MMM d,YYY"
+
+        print(bill)(billDateFormatter.date(from: billDate) */
+
+    }}
 
