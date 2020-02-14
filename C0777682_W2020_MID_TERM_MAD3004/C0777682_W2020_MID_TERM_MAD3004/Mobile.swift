@@ -10,34 +10,42 @@ import Foundation
 
 class Mobile : Bill
 {
-    var mobileModelName : String
+    var manufacturerName : String
     var mobileNumber : String
-    var mobilePlan : String
-    var internetGBUsed : String
-    var minuteUsed : String
-    
-    init(billId : Int,billDate : Date,billType : BillType , totalBill : Double,  mobileModelName : String, mobileNumber : String, mobilePlan : String, internetGBUsed : String, minuteUsed: String)
+    var mobilePlan :Int
+    var internetGBUsed : Int
+    var minuteUsed : Int
+    var billAmount : Double
     {
-        self.mobileModelName = mobileModelName
+        return self.calculateBill()
+    }
+    init(billId : Int,billDate : Date,billType : BillType,  manufacturerName : String, mobileNumber : String, mobilePlan : Int , internetGBUsed : Int, minuteUsed: Int)
+    {
+        self.manufacturerName   = manufacturerName
         self.mobileNumber = mobileNumber
         self.mobilePlan = mobilePlan
         self.internetGBUsed = internetGBUsed
         self.minuteUsed = minuteUsed
-        super.init(billId: billId, billDate: billDate, billType: billType, totalBill: totalBill)
+        super.init(billId: billId, billDate: billDate, billType: billType)
     }
     override func display()
     {
-        print("Name of The Mobile Model     : \(mobileModelName)")
+        print("Name of The Manufacturer     : \(manufacturerName)")
         print("Mobile NUmber                : \(mobileNumber)")
         print("Mobile Plan                  : \(mobilePlan)")
         print("Internet Used (GB)           : \(internetGBUsed)")
         print("Talk Minutes                 : \(minuteUsed)")
+        print("MObile Bill                  :\(billAmount)")
     }
     
-    func calculateBill(Int : billId)-> Double
+    func calculateBill()->Double
     {
-        return 
+        var bill = 0.0
+        bill = ((self.internetGBUsed * self.minuteUsed)/self.mobilePlan)*100
+        return bill
     }
+    
+    
     
     /* var isValidPhone: Bool {
          let regularExpressionForPhone = "^\\d{3}-\\d{3}-\\d{4}$"

@@ -16,6 +16,6 @@ func isValidEmail() -> Bool
     return emailTest.evaluate(with: "Email is not correct")
 }
 
-var c1 = Customer(customerId: 1, firstName: "kamal", lastName: "kaur" , bills: 3, email: "kamalpreetkaurgmail.com", totalBillAmount: 45.0)
-c1.display()
 
+
+var m1 = Mobile(

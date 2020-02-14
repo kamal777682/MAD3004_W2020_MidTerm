@@ -8,27 +8,27 @@
 
 import Foundation
 
-class Customer : Bill
+class Customer : IDisplay
 {
     
     var customerId : Int
     var firstName : String
     var lastName : String
-    var bills : Double//dictionary creation
-    var totalBillAmount : Double //format the output
+    var bills = [String : Double]()//dictionary creation
+    var totalBillAmount : Double
+    {
+        return self.calculateBill()
+    }
     var email : String
-    init(customerId : Int,firstName : String, lastName : String, bills: Double,email : String ,totalBillAmount : Double,billId : Int,billDate : Date,billType : BillType , totalBill : Double)
+    init(customerId : Int,firstName : String, lastName : String, bills: [String : Double],email : String ,totalBillAmount : Double)
     {
         self.customerId = customerId
         self.firstName = firstName
         self.lastName = lastName
         self.bills = bills
         self.email = email
-        self.totalBillAmount = totalBillAmount
-        super.init(billId: billId, billDate: billDate, billType: billType, totalBill: totalBill)
     }
-   
-    override func display()
+    func display()
     {
         print("Customer Id          : \(customerId)")
         print("First Name           : \(firstName)")
@@ -44,8 +44,22 @@ class Customer : Bill
         {
             print("E-Mail Id            : Email Id not valid")
         }
-        print("Bills to be Paid     : \(bills)")
+        print("Bills to be Paid ")
+        for b in self.bills
+        {
+            print(b.key,":" , b.value)
+        }
         print("Total bill to pay    : \(totalBillAmount)")
     }
     
+    func calculateBill()-> Double
+    {
+        var bill : Double
+        for b in self.bills
+        {
+            bill = bill + b.value
+        }
+        return bill
+    }
+  
 }
