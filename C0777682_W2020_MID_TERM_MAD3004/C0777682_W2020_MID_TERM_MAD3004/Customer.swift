@@ -11,34 +11,40 @@ import Foundation
 class Customer : IDisplay
 {
     
-    var customerId : String
+    var customerId : Int
     var firstName : String
     var lastName : String
-    var fullName : String
-    var email : String
     var bills : Double//dictionary creation
     var totalBillAmount : Double //format the output
-    
-    init(customerId : String,firstName : String, lastName : String, fullName : String, email : String, bills: Double,totalBillAmount : Double)
+    var email : String
+    init(customerId : Int,firstName : String, lastName : String, bills: Double,email : String ,totalBillAmount : Double)
     {
         self.customerId = customerId
         self.firstName = firstName
         self.lastName = lastName
-        self.fullName = fullName
-        self.email = email
         self.bills = bills
+        self.email = email
         self.totalBillAmount = totalBillAmount
     }
-    
+   
     func display()
     {
-        print("Customer Id : \(customerId)")
-        print("First Name : \(firstName)")
-        print("Last Nname : \(lastName)")
-        print("Full Name : \(fullName)")
-        print("E-Mail Id : \(email) ")
-        print("Bills to be Paid : \(bills)")
-        print("Total bill to pay : \(totalBillAmount)")
+        print("Customer Id          : \(customerId)")
+        print("First Name           : \(firstName)")
+        print("Last Nname           : \(lastName)")
+        print("Full Name            : \(firstName)\(lastName)")
+        // full name will be automatic displayed we don't need to initialize it
+        
+        if isValidEmail() == true
+        {
+            print("E-Mail Id        : \(email) ")
+        }
+        else
+        {
+            print("E-Mail Id            : Email Id not valid")
+        }
+        print("Bills to be Paid     : \(bills)")
+        print("Total bill to pay    : \(totalBillAmount)")
     }
     
 }
