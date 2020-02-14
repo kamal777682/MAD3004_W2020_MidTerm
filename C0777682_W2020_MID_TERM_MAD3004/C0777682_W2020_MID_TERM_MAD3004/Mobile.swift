@@ -34,6 +34,11 @@ class Mobile : Bill
         print("Talk Minutes                 : \(minuteUsed)")
     }
     
+    func calculateBill(Int : billId)-> Double
+    {
+        return 
+    }
+    
     /* var isValidPhone: Bool {
          let regularExpressionForPhone = "^\\d{3}-\\d{3}-\\d{4}$"
          let testPhone = NSPredicate(format:"SELF MATCHES %@", regularExpressionForPhone)

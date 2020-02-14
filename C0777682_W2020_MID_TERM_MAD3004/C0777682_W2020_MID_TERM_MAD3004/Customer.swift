@@ -8,7 +8,7 @@
 
 import Foundation
 
-class Customer : IDisplay
+class Customer : Bill
 {
     
     var customerId : Int
@@ -17,7 +17,7 @@ class Customer : IDisplay
     var bills : Double//dictionary creation
     var totalBillAmount : Double //format the output
     var email : String
-    init(customerId : Int,firstName : String, lastName : String, bills: Double,email : String ,totalBillAmount : Double)
+    init(customerId : Int,firstName : String, lastName : String, bills: Double,email : String ,totalBillAmount : Double,billId : Int,billDate : Date,billType : BillType , totalBill : Double)
     {
         self.customerId = customerId
         self.firstName = firstName
@@ -25,9 +25,10 @@ class Customer : IDisplay
         self.bills = bills
         self.email = email
         self.totalBillAmount = totalBillAmount
+        super.init(billId: billId, billDate: billDate, billType: billType, totalBill: totalBill)
     }
    
-    func display()
+    override func display()
     {
         print("Customer Id          : \(customerId)")
         print("First Name           : \(firstName)")
