@@ -40,11 +40,13 @@ class Bill : IDisplay
     }
     func dateFormat(string : String)-> String   // https://www.hackingwithswift.com/example-code/system/how-to-convert-dates-and-times-to-a-string-using-dateformatter
     {
-        let billDateFormatter = DateFormatter()
-        billDateFormatter.dateFormat = "HH:mm E, d MMM y"
-        let date = DateFormatter.string(<#T##self: DateFormatter##DateFormatter#>)
-        return date
-       
+        let getdate = DateFormatter()
+        getdate.dateFormat = "dd/MM/yyyy"
+        
+        let setdate = DateFormatter()
+        setdate.dateFormat = "EEEE,mmmm d, YYYY"
+        let date : Date? =  getdate.date(from: billDate)
+        return setdate.string(from: date!)     
           
         /* let billDateFormatter = DateFormatter()
         billDateFormatter.dateFormat = "EE?E ,MMM d,YYY"
