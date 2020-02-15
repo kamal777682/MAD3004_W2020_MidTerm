@@ -24,5 +24,8 @@ func isValidPhone() -> Bool
       return testPhone.evaluate(with: "Number is invalid")
 }
 
+var b1 = Bill(billId: "I001", billDate: "20022020", billType: BillType.Internet  )
 
-var b1 = Bill(billId: M001, billDate: 2, billType: <#T##BillType#>)
+var i1 = Internet(billId: "I001", billDate: "20022020", billType: BillType.Internet, totalBill: 45.0, internetProvider: "Rogers", internetGBUsed: "5GB", internetRate: "1Gb/$15")
+
+

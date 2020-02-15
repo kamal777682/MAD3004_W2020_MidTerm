@@ -15,7 +15,7 @@ class Internet : Bill
     var internetGBUsed : String
     var internetRate : String
     
-    init(billId: Int, billDate: Date, billType: BillType, totalBill: Double,internetProvider : String ,internetGBUsed : String, internetRate : String )
+    init(billId:String, billDate: String, billType: BillType, totalBill: Double,internetProvider : String ,internetGBUsed : String, internetRate : String )
     {
         self.internetProvider = internetProvider
         self.internetGBUsed = internetGBUsed
@@ -25,9 +25,7 @@ class Internet : Bill
     
     override func display()
     {
-        print("BIll Id              : \(billId)")
-        print("Bill Due Date        : \(billDate)")
-        print("Bill Type            : \(billType)")
+        super.display()
         print("Internet Provider    : \(internetProvider)")
         print("Internet Rate        : \(internetRate)")
         print("Internet Used(GB)    : \(internetGBUsed)")

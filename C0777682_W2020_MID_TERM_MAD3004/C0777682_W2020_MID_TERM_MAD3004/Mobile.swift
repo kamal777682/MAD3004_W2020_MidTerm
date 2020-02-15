@@ -19,14 +19,14 @@ class Mobile : Bill
     {
         return self.calculateBill()
     }
-    init(billId : Int,billDate : Date,billType : BillType,  manufacturerName : String, mobileNumber : String, mobilePlan : Int , internetGBUsed : Int, minuteUsed: Int)
+    init(billId :String, billDate : String ,billType : BillType,  manufacturerName : String, mobileNumber : String, mobilePlan : Int , internetGBUsed : Int, minuteUsed: Int)
     {
         self.manufacturerName   = manufacturerName
         self.mobileNumber = mobileNumber
         self.mobilePlan = mobilePlan
         self.internetGBUsed = internetGBUsed
         self.minuteUsed = minuteUsed
-        super.init(billId: billId, billDate: billDate, billType: billType)
+        super.init(billId: billId, billDate : billDate, billType: billType)
     }
     override func display()
     {
@@ -36,6 +36,7 @@ class Mobile : Bill
         print("Internet Used (GB)           : \(internetGBUsed)")
         print("Talk Minutes                 : \(minuteUsed)")
         print("MObile Bill                  :\(billAmount)")
+        super.display()
     }
     
     func calculateBill()->Double

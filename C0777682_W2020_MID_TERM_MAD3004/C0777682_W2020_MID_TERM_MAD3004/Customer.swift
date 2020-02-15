@@ -8,13 +8,13 @@
 
 import Foundation
 
-class Customer : IDisplay
+class Customer : Bill
 {
    
     var customerId : Int
     var firstName : String
     var lastName : String
-    var bills = [String : Double]()//dictionary creation
+    var bills = [String : BillType] =    [billId   : BillType]//dictionary creation
     var totalBillAmount : Double
     {
         return self.calculateBill()
@@ -54,12 +54,12 @@ class Customer : IDisplay
     }
     func calculateBill()-> Double
     {
-        var bill : Double
+        var t : Double?
         for b in self.bills
         {
-            bill = bill + b.value
+            t = (t ?? <#default value#>) + b.value
         }
-        return bill
+        return t 
     }
   
 }

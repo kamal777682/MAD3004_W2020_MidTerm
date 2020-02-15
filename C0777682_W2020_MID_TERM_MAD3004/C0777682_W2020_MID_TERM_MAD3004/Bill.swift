@@ -9,52 +9,51 @@
 import Foundation
 
 enum BillType {
-    case Mobile,InTernet,Hydro
+    case Mobile
+    case Internet
+    case Hydro
 }
 
 class Bill : IDisplay
 {
-    var billId : Int
+    var billId :  String
     var billDate : String
     var billType : BillType
-    var totalBill :  Double
+    var totalBill :  Double = 0.0
     
-    init(billId : Int,billDate : String)
-    {
-        self.billId = billId
-        self.billDate = billDate
-    }
-    
-    init(billId : Int,billDate : String,billType : BillType )
+       
+    init(billId : String,billDate : String,billType : BillType)//totalBill :  Double)
     {
         self.billId = billId
         self.billDate = billDate
         self.billType = billType
+        //self.totalBill = totalBill
+      
     }
-    
+   
     func display()
     {
         print("BIll Id              : \(billId)")
-        print("Bill Due Date        : \(billDate)")
+        print("Bill Due Date        : \(dateFormat(string: billDate))")
         print("Bill Type            : \(billType)")
-        print("Total Bill to pay    : \(totalBill)")
+       // print("Total Bill to pay    : \(totalBill)")
     }
-    func dateFormat()-> Date
+    func dateFormat(string : String)-> String   // https://www.hackingwithswift.com/example-code/system/how-to-convert-dates-and-times-to-a-string-using-dateformatter
     {
-        let billDate = "20:32 Wed, 30 Oct 2019"
         let billDateFormatter = DateFormatter()
-        billDateFormatter.dateFormat = "EEE ,MMM d,YYY"
+        billDateFormatter.dateFormat = "HH:mm E, d MMM y"
+        let date = DateFormatter.string(<#T##self: DateFormatter##DateFormatter#>)
+        return date
+       
+          
+        /* let billDateFormatter = DateFormatter()
+        billDateFormatter.dateFormat = "EE?E ,MMM d,YYY"
         guard let date = billDateFormatter.date(from: billDate) else
         {
             print("Unknown Date")
+            return
         }
-        return date
-        
-        /* let billDate : String
-        let billDateFormatter = DateFormatter()
-        billDateFormatter.dateFormat = "EEE ,MMM d,YYY"
-
-        print(bill)(billDateFormatter.date(from: billDate) */
-
-    }}
-
+         return date
+        }*/
+    }
+}
