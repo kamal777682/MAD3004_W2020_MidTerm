@@ -57,18 +57,20 @@ class Customer : IDisplay,CalculateTotalBill
         print("*************************************************")
             for i in self.bills
             {
+                print("-------------------------------------------------")
                 i.value.display()
             }
             if bills.count == 0
             {
-                print("---No Bill Found For The Given Customer----")
-                 print("*************************************************")            }
+                print("  ---No Bill Found For The Given Customer----")
+                 print("*************************************************")
+            }
             else
             {
             
-                print("==================================================")
+                print("=================================================")
                 print("Total bill to pay    : \(calculateTotalBill().cur())")
-                print("==================================================")
+                print("=================================================")
             }
                 print("")
     }
