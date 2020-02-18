@@ -15,7 +15,7 @@ var i2 = Internet(billId: "I002", billDate: "14/03/2019", billType: .Internet, i
 var i3 = Internet(billId: "I003", billDate: "23/08/2019", billType: .Internet, internetProvider: "Freedom", internetGBUsed: 6, internetRate: 3.5)
 var h1 = Hydro(billId: "H001", billDate: "26/04/2018", billType: .Hydro,agencyName: "Planet Energy", unitConsumed: 200, rate: 0.90)
 var h2 = Hydro(billId: "H002", billDate: "03/09/2019", billType: .Hydro, agencyName: "OntarioHydro", unitConsumed: 700, rate: 0.75)
-var m1 = Mobile(billId: "M001", billDate: "07/09/2019", billType: .Mobile, manufacturerName: "Apple Inc.", mobileNumber: "4563780045", mobilePlan:"4.5GB + 1000 Min", internetGBUsed: 4, minuteUsed: 100, planRate: 0.95, internetRate: 5)
+var m1 = Mobile(billId: "M001", billDate: "07/09/2019", billType: .Mobile, manufacturerName: "Apple Inc.", mobileNumber: "4563045045", mobilePlan:"4.5GB + 1000 Min", internetGBUsed: 4, minuteUsed: 100, planRate: 0.95, internetRate: 5)
 var m2 = Mobile(billId: "M002", billDate: "08/09/2019", billType: .Mobile, manufacturerName: "Apple Inc.", mobileNumber: "45637800", mobilePlan:"4.5GB + 1000 Min", internetGBUsed: 2, minuteUsed: 200, planRate: 0.95, internetRate: 5)
 
 var c1 = Customer(customerId: "C001", firstName: "Kamalpreet", lastName: "Kaur", email: "kamal456@gmail.com")
@@ -34,7 +34,7 @@ if c4.email.isValidEmail()
 {
     c4.addBill(bill: i3, billID: i3.billId)
 }
-c5.addBill(bill: m2, billID: m2.billId)
+//c5.addBill(bill: m2, billID: m2.billId)
 
 func addCustomer(customer : Customer , customerId : String)
 {
@@ -60,6 +60,10 @@ func getCustomerById(Id: String)
 if m1.mobileNumber.isValidPhone()
 {
     getCustomerById(Id: "C001")
+}
+else
+{
+    print("Customer doesn't exist\n")
 }
 //c1.removeBill(bill: i1, billID: "I001")
 //getCustomerById(Id: "C001")
