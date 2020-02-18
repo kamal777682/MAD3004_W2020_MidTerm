@@ -32,21 +32,21 @@ class Mobile : Bill, CalculateTotalBill
     override func display()
     {
         super.display()
-        print("Name of The Manufacturer     : \(manufacturerName)")
-        print("Mobile NUmber                : \(mobileNumber)")
-        print("Mobile Plan                  : \(mobilePlan)")
-        print("Internet Used (GB)           : \(internetGBUsed.dataUsed())")
-        print("Talk Minutes                 : \(minuteUsed)")
-        print("Mobile plan rate             : \(planRate)")
-        print("Bill Amount                  : \(calculateTotalBill())")
-       
+        print("Manufacturer Name    : \(manufacturerName)")
+        print("Mobile NUmber        : \(mobileNumber)")
+        print("Mobile Plan          : \(mobilePlan)")
+        print("Internet Used (GB)   : \(internetGBUsed.dataUsed())")
+        print("Internet Rate        : \(internetRate)")
+        print("Talk Minutes         : \(minuteUsed)")
+        print("Minutes  rate        : \(planRate)")
+        print("Bill Amount          : \(calculateTotalBill())")
     }
     
     func calculateTotalBill()->Double
     {
         let internetbill = Double(self.internetGBUsed) * self.internetRate
         let mobilebill = Double(self.minuteUsed) * self.planRate
-        totalBill = internetbill + mobilebill
+        totalBill = (internetbill + mobilebill)
         return totalBill
     }
     
