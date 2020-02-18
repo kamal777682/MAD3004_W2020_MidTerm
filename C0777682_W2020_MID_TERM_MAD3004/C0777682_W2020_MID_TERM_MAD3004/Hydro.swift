@@ -26,9 +26,9 @@ class Hydro : Bill, CalculateTotalBill
     {
         super.display()
         print("Agency Name          : \(self.agencyName)")
-        print("Unit Consumed        : \(self.unitConsumed)")
+        print("Unit Consumed        : \(self.unitConsumed) units")
         print("Hydro Rate Per Units : \(self.rate.currencyPerUnit())")
-        print("Bill To BE Paid      : \(self.calculateTotalBill())")    }
+        print("HYDRO Bill Amount    : $\(self.calculateTotalBill())")    }
     
     func calculateTotalBill() -> Double
     {

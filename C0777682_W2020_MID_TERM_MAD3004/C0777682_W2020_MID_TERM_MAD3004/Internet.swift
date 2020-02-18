@@ -28,8 +28,8 @@ class Internet : Bill, CalculateTotalBill
         super.display()
         print("Internet Provider    : \(internetProvider)")
         print("Internet Rate        : \(internetRate.currencyPerGB())")
-        print("Internet Used(GB)    : \(internetGBUsed)")
-        print("Bill to be Paid      : \(calculateTotalBill())")
+        print("Internet Used(GB)    : \(internetGBUsed)GB")
+        print("INTERNET Bill Amount : $\(calculateTotalBill())")
     }
    
     func calculateTotalBill() -> Double {
