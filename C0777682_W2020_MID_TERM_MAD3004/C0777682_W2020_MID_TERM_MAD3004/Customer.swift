@@ -52,23 +52,23 @@ class Customer : IDisplay,CalculateTotalBill
         print("Customer Name        : \(firstName)\(lastName)")
         // full name will be automatic displayed we don't need to initialize it
         print("E-Mail Id            : \(self.email)")
-        print("\n               Bills to be Paid            ")
         print("-------------------------------------------------")
+        print("              Bills to be Paid            ")
+        print("*************************************************")
             for i in self.bills
             {
-                print("-------------------------------------------------")
                 i.value.display()
             }
             if bills.count == 0
             {
                 print("---No Bill Found For The Given Customer----")
-            }
+                 print("*************************************************")            }
             else
             {
             
-                print("-------------------------------------------------")
+                print("==================================================")
                 print("Total bill to pay    : \(calculateTotalBill().cur())")
-                print("-------------------------------------------------")
+                print("==================================================")
             }
                 print("")
     }
