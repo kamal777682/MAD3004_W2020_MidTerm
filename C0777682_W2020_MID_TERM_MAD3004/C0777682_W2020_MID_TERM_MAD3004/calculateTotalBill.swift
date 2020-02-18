@@ -10,5 +10,5 @@ import Foundation
 
 protocol CalculateTotalBill
 {
-   func  calculateTotalBill() -> Float
+   func  calculateTotalBill() -> Double
 }

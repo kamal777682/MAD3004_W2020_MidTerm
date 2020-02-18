@@ -11,13 +11,13 @@ import Foundation
 class Customer : IDisplay,CalculateTotalBill
 {
    
-    var customerId : Int
+    var customerId : String
     var firstName : String
     var lastName : String
     lazy var bills = [String : Bill]()   //dictionary creation
     var totalBillAmount : Double
     var email : String
-    init(customerId : Int,firstName : String, lastName : String, bills: [String : Double],email : String ,totalBillAmount : Double)
+    init(customerId : String,firstName : String, lastName : String,email : String)
     {
         self.customerId = customerId
         self.firstName = firstName
@@ -30,7 +30,7 @@ class Customer : IDisplay,CalculateTotalBill
         bills.updateValue(bill, forKey: billID)
     }
     
-      func calculateBill()-> Double
+      func calculateTotalBill()-> Double
       {
         for i in bills
         {

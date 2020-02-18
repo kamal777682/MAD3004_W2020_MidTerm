@@ -8,42 +8,46 @@
 
 import Foundation
 
-class Mobile : Bill
+class Mobile : Bill, CalculateTotalBill
 {
     var manufacturerName : String
     var mobileNumber : String
-    var mobilePlan :Int
+    var mobilePlan :String
     var internetGBUsed : Int
     var minuteUsed : Int
-    var billAmount : Double
-    {
-        return self.calculateBill()
-    }
-    init(billId :String, billDate : String ,billType : BillType,  manufacturerName : String, mobileNumber : String, mobilePlan : Int , internetGBUsed : Int, minuteUsed: Int)
+    var planRate :  Double
+    var internetRate : Double
+    
+    init(billId :String, billDate : String ,billType : BillType,  manufacturerName : String, mobileNumber : String, mobilePlan : String , internetGBUsed : Int, minuteUsed: Int,planRate : Double,internetRate : Double)
     {
         self.manufacturerName   = manufacturerName
         self.mobileNumber = mobileNumber
         self.mobilePlan = mobilePlan
         self.internetGBUsed = internetGBUsed
         self.minuteUsed = minuteUsed
+        self.planRate = planRate
+        self.internetRate = internetRate
         super.init(billId: billId, billDate : billDate, billType: billType)
     }
     override func display()
     {
+        super.display()
         print("Name of The Manufacturer     : \(manufacturerName)")
         print("Mobile NUmber                : \(mobileNumber)")
         print("Mobile Plan                  : \(mobilePlan)")
-        print("Internet Used (GB)           : \(internetGBUsed)")
+        print("Internet Used (GB)           : \(internetGBUsed.dataUsed())")
         print("Talk Minutes                 : \(minuteUsed)")
-        print("MObile Bill                  :\(billAmount)")
-        super.display()
+        print("Mobile plan rate             : \(planRate)")
+        print("Bill Amount                  : \(calculateTotalBill())")
+       
     }
     
-    func calculateBill()->Double
+    func calculateTotalBill()->Double
     {
-        var bill = 0.0
-        bill = ((self.internetGBUsed * self.minuteUsed)/self.mobilePlan)*100
-        return bill
+        let internetbill = Double(self.internetGBUsed) * self.internetRate
+        let mobilebill = Double(self.minuteUsed) * self.planRate
+        totalBill = internetbill + mobilebill
+        return totalBill
     }
     
     
