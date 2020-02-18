@@ -36,10 +36,10 @@ class Mobile : Bill, CalculateTotalBill
         print("Mobile NUmber        : \(mobileNumber)")
         print("Mobile Plan          : \(mobilePlan)")
         print("Internet Used (GB)   : \(internetGBUsed.dataUsed())")
-        print("Internet Rate        : \(internetRate.currencyPerGB())")
+        print("Internet Rate        : \(internetRate.curPerGB())")
         print("Talk Minutes         : \(minuteUsed.timeInMinutes())")
-        print("Minutes  rate        : \(planRate.currencyPerMin())")
-        print("MOBILE Bill Amount   : $ \(calculateTotalBill())")
+        print("Minutes  rate        : \(planRate.curPerMin())")
+        print("MOBILE Bill Amount   : \(calculateTotalBill().cur())")
     }
     
     func calculateTotalBill()->Double

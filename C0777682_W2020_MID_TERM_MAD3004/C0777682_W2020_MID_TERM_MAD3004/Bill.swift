@@ -46,7 +46,7 @@ class Bill : IDisplay
         getdate.dateFormat = "dd/MM/yyyy"
         
         let setdate = DateFormatter()
-        setdate.dateFormat = "EEEE,d-MM-YYYY"
+        setdate.dateFormat = "EEEE,d MMMM ,yyyy"
         let date : Date? =  getdate.date(from: billDate)
         return setdate.string(from: date!)     
           

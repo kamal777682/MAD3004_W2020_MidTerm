@@ -41,23 +41,23 @@ extension Int{
 
 extension Double
 {
-    func currency() ->String
+    func cur() ->String
     {
         let cur = String.init(format: "$%.2f",self)
         return cur
     }
     
-    func currencyPerGB()->String
+    func curPerGB()->String
     {
         let cur_per_GB = String.init(format: "$%.2f/GB",self)
         return cur_per_GB
     }
-    func currencyPerMin()-> String
+    func curPerMin()-> String
     {
         let cur_per_min = String.init(format : "$%.2f/min",self)
         return cur_per_min
     }
-    func currencyPerUnit()-> String
+    func curPerUnit()-> String
     {
         let cur_per_unit = String.init(format : "$%.2f/unit",self)
         return cur_per_unit
