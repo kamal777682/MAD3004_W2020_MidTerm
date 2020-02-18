@@ -47,7 +47,7 @@ class Customer : IDisplay,CalculateTotalBill
 
     func display()
     {
-        print("-------------------------------------------------")
+        print("*************************************************")
         print("Customer Id          : \(self.customerId)")
         print("Customer Name        : \(firstName)\(lastName)")
         // full name will be automatic displayed we don't need to initialize it
