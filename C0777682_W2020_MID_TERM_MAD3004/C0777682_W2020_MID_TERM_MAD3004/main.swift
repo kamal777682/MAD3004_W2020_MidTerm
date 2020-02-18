@@ -75,4 +75,4 @@ else
     print("Invalid Mobile number : " + m2.mobileNumber)
 }
 
-getCustomerById(Id: "C006")
+getCustomerById(Id: "C006") // trying to display info. of customer which don't exist
