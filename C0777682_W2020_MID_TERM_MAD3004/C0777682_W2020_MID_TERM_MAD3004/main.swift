@@ -15,7 +15,7 @@ var i2 = Internet(billId: "I002", billDate: "14/03/2019", billType: .Internet, i
 var i3 = Internet(billId: "I003", billDate: "23/08/2019", billType: .Internet, internetProvider: "Freedom", internetGBUsed: 6, internetRate: 3.5)
 var h1 = Hydro(billId: "H001", billDate: "26/04/2018", billType: .Hydro,agencyName: "Planet Energy", unitConsumed: 200, rate: 0.90)
 var h2 = Hydro(billId: "H002", billDate: "03/09/2019", billType: .Hydro, agencyName: "OntarioHydro", unitConsumed: 700, rate: 0.75)
-var m1 = Mobile(billId: "M001", billDate: "07/09/2019", billType: .Mobile, manufacturerName: "Apple Inc.", mobileNumber: "4563045045", mobilePlan:"4.5GB + 1000 Min", internetGBUsed: 4, minuteUsed: 100, planRate: 0.95, internetRate: 5)
+var m1 = Mobile(billId: "M001", billDate: "07/09/2019", billType: .Mobile, manufacturerName: "Apple Inc.", mobileNumber: "4504500577", mobilePlan:"4.5GB + 1000 Min", internetGBUsed: 4, minuteUsed: 100, planRate: 0.95, internetRate: 5)
 var m2 = Mobile(billId: "M002", billDate: "08/09/2019", billType: .Mobile, manufacturerName: "Apple Inc.", mobileNumber: "45637800", mobilePlan:"4.5GB + 1000 Min", internetGBUsed: 2, minuteUsed: 200, planRate: 0.95, internetRate: 5)
 
 var c1 = Customer(customerId: "C001", firstName: "Kamalpreet", lastName: "Kaur", email: "kamal456@gmail.com")
@@ -24,17 +24,6 @@ var c3 = Customer(customerId: "C003", firstName: "Jyoti", lastName: "Thomas", em
 var c4 = Customer(customerId: "C004", firstName: "Geet", lastName: "Gupta", email: "geetgupta@yahoo")
 //var c5 = Customer(customerId: "C005", firstName: "Prianka", lastName: "Sharma", email: "priyanka456@yahoo.com")
 
-c1.addBill(bill: i1, billID: i1.billId)
-c1.addBill(bill: h1, billID: h1.billId)
-c1.addBill(bill: m1, billID: m1.billId)
-c2.addBill(bill: i2, billID: i2.billId)
-c3.addBill(bill: h2, billID: h2.billId)
-c3.addBill(bill: i3, billID: i3.billId)
-if c4.email.isValidEmail() 
-{
-    c4.addBill(bill: i3, billID: i3.billId)
-}
-//c5.addBill(bill: m2, billID: m2.billId)
 
 func addCustomer(customer : Customer , customerId : String)
 {
@@ -57,19 +46,31 @@ func getCustomerById(Id: String)
             print("Customer doesn't exist\n")
     }
 }
-if m1.mobileNumber.isValidPhone()
+c1.addBill(bill: i1, billID: i1.billId)
+c1.addBill(bill: h1, billID: h1.billId)
+c1.addBill(bill: m1, billID: m1.billId)
+c2.addBill(bill: i2, billID: i2.billId)
+c3.addBill(bill: h2, billID: h2.billId)
+c3.addBill(bill: i3, billID: i3.billId)
+if c4.email.isValidEmail()
+{
+    c4.addBill(bill: i3, billID: i3.billId)
+}
+//c5.addBill(bill: m2, billID: m2.billId)
+
+if m1.mobileNumber.isValidPhone() //object will not be created if the mobile number is invalid
 {
     getCustomerById(Id: "C001")
 }
 else
 {
-    print("Customer doesn't exist\n")
+    print(" Mobile number is not valid" + m1.mobileNumber)
 }
 //c1.removeBill(bill: i1, billID: "I001")
 //getCustomerById(Id: "C001")
 getCustomerById(Id: "C002")
 getCustomerById(Id: "C003")
 getCustomerById(Id: "C004")
-getCustomerById(Id: "C005")
+//getCustomerById(Id: "C005")
 
 
