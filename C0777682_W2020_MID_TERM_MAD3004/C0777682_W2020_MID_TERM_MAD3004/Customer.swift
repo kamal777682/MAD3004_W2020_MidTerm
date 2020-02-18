@@ -16,9 +16,6 @@ class Customer : IDisplay,CalculateTotalBill
     var lastName : String
     lazy var bills = [String : Bill]()   //dictionary creation
     var totalBillAmount : Double
-    {
-        return self.calculateBill()
-    }
     var email : String
     init(customerId : Int,firstName : String, lastName : String, bills: [String : Double],email : String ,totalBillAmount : Double)
     {
@@ -35,37 +32,39 @@ class Customer : IDisplay,CalculateTotalBill
     
       func calculateBill()-> Double
       {
-          var t : Double?
-          for b in self.bills
-          {
-              t = (t ?? <#default value#>) + b.value
-          }
-          return t
+        for i in bills
+        {
+            totalBillAmount = totalBillAmount + i.value.totalBill
+        }
+        return totalBillAmount
       }
+    
+
     func display()
     {
-        print("Customer Id          : \(customerId)")
+        print("Customer Id          : \(self.customerId)")
         print("Customer Name            : \(firstName)\(lastName)")
         // full name will be automatic displayed we don't need to initialize it
-        
-        if isValidEmail() == true
+        print("E-Mail Id            :\(self.email)")
+        print("            Bills to be Paid            ")
+        print("---------------------------------------------")
+        for i in self.bills
         {
-            print("E-Mail Id        : \(email) ")
+            i.value.display()
+            print("********************************************")
+        }
+        if bills.count == 0
+        {
+            print("---No Bill Found For The Given Customer---")
         }
         else
         {
-            print("E-Mail Id            : Email Id not valid")
+    
+            print("---------------------------------------------")
+            print("Total bill to pay    : \(totalBillAmount)")
+            print("---------------------------------------------")
         }
-        print("Bills to be Paid ")
-        print("---------------------------------------------")
-        for b in self.bills
-        {
-            print(b.key,":" , b.value)
-        }
-        print("---------------------------------------------")
-        print("Total bill to pay    : \(totalBillAmount)")
-        print("---------------------------------------------")
+        print("")
     }
-  
-  
-}
+ 
+ }
