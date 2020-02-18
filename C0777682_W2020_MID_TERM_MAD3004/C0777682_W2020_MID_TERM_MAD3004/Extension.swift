@@ -11,19 +11,18 @@ import Foundation
 extension String
 {
        
-    func isValidEmail() -> Bool
+    func isValidEmail() -> Bool //https://stackoverflow.com/questions/27998409/email-phone-validation-in-swift
     {
         let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
-        
         let emailTest = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
-        return emailTest.evaluate(with: "Email is not correct")
+        return emailTest.evaluate(with: self)
     }
 
-    func isValidPhone() -> Bool
+    func isValidPhone() -> Bool //https://stackoverflow.com/questions/27998409/email-phone-validation-in-swift
     {
           let regularExpressionForPhone = "^\\d{3}-\\d{3}-\\d{4}$"
           let testPhone = NSPredicate(format:"SELF MATCHES %@", regularExpressionForPhone)
-          return testPhone.evaluate(with: "Number is invalid")
+          return testPhone.evaluate(with: self)
     }
 }
 
@@ -37,5 +36,30 @@ extension Int{
     {
         let time = String.init(format: "%i min",self)
         return time
+    }
+}
+
+extension Double
+{
+    func currency() ->String
+    {
+        let cur = String.init(format: "$%.2f",self)
+        return cur
+    }
+    
+    func currencyPerGB()->String
+    {
+        let cur_per_GB = String.init(format: "$%.2f/GB",self)
+        return cur_per_GB
+    }
+    func currencyPerMin()-> String
+    {
+        let cur_per_min = String.init(format : "$%.2f/min",self)
+        return cur_per_min
+    }
+    func currencyPerUnit()-> String
+    {
+        let cur_per_unit = String.init(format : "$%.2f/unit",self)
+        return cur_per_unit
     }
 }

@@ -27,7 +27,7 @@ class Internet : Bill, CalculateTotalBill
     {
         super.display()
         print("Internet Provider    : \(internetProvider)")
-        print("Internet Rate        : \(internetRate)")
+        print("Internet Rate        : \(internetRate.currencyPerGB())")
         print("Internet Used(GB)    : \(internetGBUsed)")
         print("Bill to be Paid      : \(calculateTotalBill())")
     }
