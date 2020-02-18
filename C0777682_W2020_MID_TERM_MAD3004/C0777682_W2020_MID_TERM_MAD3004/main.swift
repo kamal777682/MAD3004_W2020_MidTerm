@@ -55,8 +55,10 @@ func getCustomerById(Id: String)
             print("Customer doesn't exist")
     }
 }
-
-getCustomerById(Id: "C001")
+if m1.mobileNumber.isValidPhone()
+{
+    getCustomerById(Id: "C001")
+}
 //c1.removeBill(bill: i1, billID: "I001")
 //getCustomerById(Id: "C001")
 getCustomerById(Id: "C002")

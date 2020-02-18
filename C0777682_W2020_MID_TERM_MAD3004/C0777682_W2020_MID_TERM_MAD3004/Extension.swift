@@ -20,7 +20,7 @@ extension String
 
     func isValidPhone() -> Bool //https://stackoverflow.com/questions/27998409/email-phone-validation-in-swift
     {
-          let regularExpressionForPhone = "^\\d{3}-\\d{3}-\\d{4}$"
+          let regularExpressionForPhone = "[0-9]{10}"
           let testPhone = NSPredicate(format:"SELF MATCHES %@", regularExpressionForPhone)
           return testPhone.evaluate(with: self)
     }
