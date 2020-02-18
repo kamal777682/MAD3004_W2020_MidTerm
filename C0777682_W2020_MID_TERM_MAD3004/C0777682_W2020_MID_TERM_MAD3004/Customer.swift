@@ -30,7 +30,12 @@ class Customer : IDisplay,CalculateTotalBill
         bills.updateValue(bill, forKey: billID)
     }
     
-      func calculateTotalBill()-> Double
+    func removeBill(bill :Bill,billID : String)
+    {
+        bills.removeValue(forKey: billID)
+    }
+      
+    func calculateTotalBill()-> Double
       {
         for i in bills
         {
