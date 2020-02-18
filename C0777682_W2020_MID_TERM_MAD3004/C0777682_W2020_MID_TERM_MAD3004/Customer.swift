@@ -8,13 +8,13 @@
 
 import Foundation
 
-class Customer : Bill
+class Customer : IDisplay,CalculateTotalBill
 {
    
     var customerId : Int
     var firstName : String
     var lastName : String
-    var bills = [String : BillType] =    [billId   : BillType]//dictionary creation
+    lazy var bills = [String : Bill]()   //dictionary creation
     var totalBillAmount : Double
     {
         return self.calculateBill()
@@ -25,9 +25,23 @@ class Customer : Bill
         self.customerId = customerId
         self.firstName = firstName
         self.lastName = lastName
-        self.bills = bills
         self.email = email
     }
+    
+    func addBill(bill :Bill,billID : String)
+    {
+        bills.updateValue(bill, forKey: billID)
+    }
+    
+      func calculateBill()-> Double
+      {
+          var t : Double?
+          for b in self.bills
+          {
+              t = (t ?? <#default value#>) + b.value
+          }
+          return t
+      }
     func display()
     {
         print("Customer Id          : \(customerId)")
@@ -52,14 +66,6 @@ class Customer : Bill
         print("Total bill to pay    : \(totalBillAmount)")
         print("---------------------------------------------")
     }
-    func calculateBill()-> Double
-    {
-        var t : Double?
-        for b in self.bills
-        {
-            t = (t ?? <#default value#>) + b.value
-        }
-        return t 
-    }
+  
   
 }

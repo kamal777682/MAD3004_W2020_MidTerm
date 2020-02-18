@@ -14,6 +14,7 @@
 		9B85181023F5FDFE00224A9C /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B85180F23F5FDFE00224A9C /* main.swift */; };
 		9B85181723F5FE8F00224A9C /* IDisplay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B85181623F5FE8F00224A9C /* IDisplay.swift */; };
 		9B85181923F6006500224A9C /* Bill.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B85181823F6006500224A9C /* Bill.swift */; };
+		9BFE4A0C23FC485A0087DFDF /* calculateTotalBill.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BFE4A0B23FC485A0087DFDF /* calculateTotalBill.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -37,6 +38,7 @@
 		9B85180F23F5FDFE00224A9C /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		9B85181623F5FE8F00224A9C /* IDisplay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IDisplay.swift; sourceTree = "<group>"; };
 		9B85181823F6006500224A9C /* Bill.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bill.swift; sourceTree = "<group>"; };
+		9BFE4A0B23FC485A0087DFDF /* calculateTotalBill.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = calculateTotalBill.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +78,7 @@
 				9B24C15923F60DA200CCCD42 /* Internet.swift */,
 				9B24C15B23F611AF00CCCD42 /* Hydro.swift */,
 				9B24C15D23F612EB00CCCD42 /* Customer.swift */,
+				9BFE4A0B23FC485A0087DFDF /* calculateTotalBill.swift */,
 			);
 			path = C0777682_W2020_MID_TERM_MAD3004;
 			sourceTree = "<group>";
@@ -138,6 +141,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9BFE4A0C23FC485A0087DFDF /* calculateTotalBill.swift in Sources */,
 				9B85181723F5FE8F00224A9C /* IDisplay.swift in Sources */,
 				9B24C15E23F612EB00CCCD42 /* Customer.swift in Sources */,
 				9B85181923F6006500224A9C /* Bill.swift in Sources */,

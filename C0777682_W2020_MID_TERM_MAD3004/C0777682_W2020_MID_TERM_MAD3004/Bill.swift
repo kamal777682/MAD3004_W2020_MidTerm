@@ -33,12 +33,14 @@ class Bill : IDisplay
    
     func display()
     {
-        print("BIll Id              : \(billId)")
-        print("Bill Due Date        : \(dateFormat(string: billDate))")
-        print("Bill Type            : \(billType)")
-       // print("Total Bill to pay    : \(totalBill)")
+        print("BIll Id              : \(self.billId)")
+        print("Bill Date            : \(self.dateFormat(string: billDate))")
+        print("Bill Type            : \(self.billType)")
+      
     }
-    func dateFormat(string : String)-> String   // https://www.hackingwithswift.com/example-code/system/how-to-convert-dates-and-times-to-a-string-using-dateformatter
+    
+    func dateFormat(string : String)-> String
+        
     {
         let getdate = DateFormatter()
         getdate.dateFormat = "dd/MM/yyyy"
@@ -48,14 +50,6 @@ class Bill : IDisplay
         let date : Date? =  getdate.date(from: billDate)
         return setdate.string(from: date!)     
           
-        /* let billDateFormatter = DateFormatter()
-        billDateFormatter.dateFormat = "EE?E ,MMM d,YYY"
-        guard let date = billDateFormatter.date(from: billDate) else
-        {
-            print("Unknown Date")
-            return
-        }
-         return date
-        }*/
     }
 }
+//https://www.hackingwithswift.com/example-code/system/how-to-convert-dates-and-times-to-a-string-using-dateformatter
