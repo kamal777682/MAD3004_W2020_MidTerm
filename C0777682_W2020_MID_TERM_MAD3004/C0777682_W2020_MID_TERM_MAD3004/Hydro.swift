@@ -25,11 +25,10 @@ class Hydro : Bill, CalculateTotalBill
     override func display()
     {
         super.display()
-        print("Bill To BE Paid  : \(self.calculateTotalBill())")
         print("Agency Name          : \(self.agencyName)")
         print("Unit Consumed        : \(self.unitConsumed)")
         print("Hydro Rate Per Units : \(self.rate)")
-    }
+        print("Bill To BE Paid      : \(self.calculateTotalBill())")    }
     
     func calculateTotalBill() -> Double
     {

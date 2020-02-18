@@ -15,7 +15,7 @@ class Customer : IDisplay,CalculateTotalBill
     var firstName : String
     var lastName : String
     lazy var bills = [String : Bill]()   //dictionary creation
-    var totalBillAmount : Double
+    var totalBillAmount : Double = 0.0
     var email : String
     init(customerId : String,firstName : String, lastName : String,email : String)
     {
@@ -43,15 +43,15 @@ class Customer : IDisplay,CalculateTotalBill
     func display()
     {
         print("Customer Id          : \(self.customerId)")
-        print("Customer Name            : \(firstName)\(lastName)")
+        print("Customer Name        : \(firstName)\(lastName)")
         // full name will be automatic displayed we don't need to initialize it
-        print("E-Mail Id            :\(self.email)")
-        print("            Bills to be Paid            ")
-        print("---------------------------------------------")
+        print("E-Mail Id            : \(self.email)")
+        print("\n               Bills to be Paid            ")
+        print("----------------------------------------------")
         for i in self.bills
         {
+            print("----------------------------------------------")
             i.value.display()
-            print("********************************************")
         }
         if bills.count == 0
         {
@@ -60,9 +60,9 @@ class Customer : IDisplay,CalculateTotalBill
         else
         {
     
-            print("---------------------------------------------")
-            print("Total bill to pay    : \(totalBillAmount)")
-            print("---------------------------------------------")
+            print("----------------------------------------------")
+            print("Total bill to pay    : \(calculateTotalBill())")
+            print("----------------------------------------------")
         }
         print("")
     }
