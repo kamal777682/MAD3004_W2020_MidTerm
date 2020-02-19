@@ -1,9 +1,6 @@
 # MAD3004_W2020_MidTerm
 
 StudentID : C0777682 
-Student Name : Kamalpreet kaur
-Instructor : Pritesh Kumar Patel
-Project Name : C0777682_W2020_MID_TERM_MAD3004
 
 References :
 
