@@ -53,7 +53,7 @@ class Customer : IDisplay,CalculateTotalBill
         // full name will be automatic displayed we don't need to initialize it
         print("E-Mail Id            : \(self.email)")
         print("-------------------------------------------------")
-        print("              Bills to be Paid            ")
+        print("              Bills Information           ")
         print("*************************************************")
             for i in self.bills
             {
