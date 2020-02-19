@@ -15,7 +15,7 @@ class Customer : IDisplay,CalculateTotalBill
     var firstName : String
     var lastName : String
     lazy var bills = [String : Bill]()   //dictionary creation
-    var totalBillAmount : Double = 0.0
+    lazy var totalBillAmount : Double = 0.0
     var email : String
     init(customerId : String,firstName : String, lastName : String,email : String)
     {
